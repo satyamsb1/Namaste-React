@@ -1,21 +1,25 @@
 {
-  "name": "day2",
+  "name": "day3",
   "version": "1.0.0",
-  "description": "Live From day 2",
   "scripts": {
-    "test": "jest"
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.20.7",
     "parcel": "^2.8.2",
     "process": "^0.11.10"
   },
   "dependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "browserslist":[
+  "browserslist": [
     "last 2 Chrome versions"
-  ]
+  ],
+  "description": ""
 }
