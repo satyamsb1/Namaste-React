@@ -1,0 +1,45 @@
+Today's @akshaymarch7 Session (31-12-2022) Running Notes by me (Please add or correct if any mistakes plz):
+
+PARCEL - THE BEAST
+
+Parcel Features:
+
+HMR (Hot Module Replacement)
+FWA (File Watcher Algorithm)
+Bundling
+Minify
+Cleaning our COde
+Dev and Production Build
+Super fast Build Algorithm
+Image Optimization
+Caching while development
+Compression
+Compatible with older version of browser
+HTTPS on dev
+port number
+Consistent Hashing Algorithms (To do all bundling)
+Zero Config (Other bundlers have much configuration)
+Tree Shaking(Removing Unwanted code)
+Browser List (How to make our app work on old browsers(IE))
+
+
+Read PARCEL Docs 
+https://parceljs.org/docs/
+
+
+Very Imp Parcel Interview Question 
+Q. Should we put parcel-cache in gitignore?
+
+Q. Why is React Fast?
+Q. What is BrowsersList.dev
+
+**Important Interview Q. What are TRANSITIVE DEPENDENCIES?
+
+Q. How to make our app work on old browsers(IE)? Using BROWSERSLIST
+
+Home Work:
+1. Read about dif bundlers: vite, webpack, parcel
+2. Read about:  ^ - caret and ~ - tilda
+3. Read PARCEL Docs from link:  https://parceljs.org/docs/
+4. Read about Script types in html (MDN Docs)
+5. Do what Akshay did in the class & Ignite your App on Local.
