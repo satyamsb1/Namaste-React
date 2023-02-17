@@ -1,3 +1,11 @@
+import { useState } from "react";
+
+const loggedInUser = ()=>{
+    // API call to check authentication
+    return true;
+}
+
+
 const Title = () =>
 (
     <a href="/"> 
@@ -12,8 +20,9 @@ const Title = () =>
 
 const Header = () =>
 {
-    return (  //You can also skip the return 
-   
+    const [isLoggedIn, setIsloggedIn] = useState(false);
+
+    return ( 
     <div className="header">
         <Title/>
             <div className = "nav-items" >
@@ -24,6 +33,14 @@ const Header = () =>
                     <li>Cart</li>
                 </ul>
             </div>
+            {
+                isLoggedIn ? (
+                    <button onClick={()=> setIsloggedIn(false)}>Logout</button> 
+                ) : (
+                    <button onClick={()=> setIsloggedIn(true)}>Login</button>)
+            }
+           
+            
     </div>
     );
 };
