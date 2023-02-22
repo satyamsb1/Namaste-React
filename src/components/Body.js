@@ -1,8 +1,7 @@
-    // import {restaurantList} from "../config"; now as we are using api directly
 import RestaurantCard from "./RestaurantCard";
-
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import {Link} from "react-router-dom";
 
 function filterData(searchText, restaurants) {
     return restaurants.filter((restaurant)=> restaurant?.data?.name?.toLowerCase()?.includes(searchText?.toLowerCase()));
@@ -13,9 +12,9 @@ const Body = () => {
     const [searchText, setSearchInput] = useState("");
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
     
-    useEffect(() => {
-        getRestaurants();
-    },[]);
+useEffect(() => {
+    getRestaurants();
+},[]);
 
     async function getRestaurants() {
         const data = await fetch(
@@ -27,12 +26,8 @@ const Body = () => {
         setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     }
 
-// Not render Component (early return)
 if(!allRestaurants) return null;
 
-if(filteredRestaurants?.length ===0) {
-    return <h1>No Restaurant found</h1>
-};
 return (allRestaurants?.length === 0 ) ? <Shimmer/> : (
         <>
             <div className="search-container">
@@ -57,7 +52,13 @@ return (allRestaurants?.length === 0 ) ? <Shimmer/> : (
             <div className="restaurant-list">
                 {
                     filteredRestaurants.map((restaurant) => {
-                        return <RestaurantCard {...restaurant.data} key={restaurant.data.id}/>
+                        return( 
+                        <Link to={"/restaurant/" + restaurant.data.id}
+                        key={restaurant.data.id}
+                        >
+                            <RestaurantCard {...restaurant.data} />
+                            </Link>
+                        );
                     })
                 }
             </div> 

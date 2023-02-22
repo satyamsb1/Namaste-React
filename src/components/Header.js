@@ -1,17 +1,13 @@
 import { useState } from "react";
-
-const loggedInUser = ()=>{
-    // API call to check authentication
-    return true;
-}
-
+import logo from "../assets/img/food.jpeg";
+import { Link } from "react-router-dom";
 
 const Title = () =>
 (
     <a href="/"> 
         <img 
         className="logo"
-         src="https://images.unsplash.com/photo-1547494784-d143dea885b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2053&q=80"           
+         src={logo}          
          alt="not rendered" />
     </a>
    
@@ -20,16 +16,16 @@ const Title = () =>
 
 const Header = () =>
 {
+    
     const [isLoggedIn, setIsloggedIn] = useState(false);
-
     return ( 
     <div className="header">
         <Title/>
             <div className = "nav-items" >
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                    <li> <Link to="/"> Home </Link> </li>
+                    <li> <Link to="/about"> About </Link> </li>
+                    <li> <Link to="/contact"> Contact </Link> </li>
                     <li>Cart</li>
                 </ul>
             </div>
