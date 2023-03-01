@@ -9,7 +9,9 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
+import LoginForm from "./components/LoginForm";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Profile from "./components/ProfileClass";
 import {createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 
 const AppLayout = () =>
@@ -17,7 +19,7 @@ const AppLayout = () =>
     return (
         <React.Fragment>
             <Header/>
-            <Outlet/>
+            <Outlet/> 
             <Footer/>
         </React.Fragment>
     );
@@ -36,8 +38,14 @@ const appRouter = createBrowserRouter([
                 element: <Body/>,
             },
             {
-                path: "/about",
+                path: "about",
                 element: <About/>,
+                children: [
+                    {
+                        path: "profile", //parantPath/{path} => localhost:1234/about/profile
+                        element: <Profile/>,
+                    }
+                ]
             },
             {
                 path: "/contact",
@@ -46,6 +54,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/restaurant/:resid",
                 element : <RestaurantMenu/>,
+            },
+            {
+                path: "/login",
+                element : <LoginForm/>,
             }
         ],
     },
