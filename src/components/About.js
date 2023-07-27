@@ -28,7 +28,7 @@ class About extends Component {
                     {" "}
                     This is the Namamste react chapter 7 
                 </p>
-                    <ProfileFunctionalComponent name = {"First Child"}/> 
+                    <Profile name = {"First Child"}/> 
                     {/* <Profile name = {"Second child"}/>  */}
             </div>
           

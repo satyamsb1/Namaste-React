@@ -2,23 +2,15 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react"; 
 import { IMG_URL } from "../config";
 import Shimmer from "./Shimmer";
+import useRestaurant from "../utils/useRestaurant";
+
 const RestaurantMenu = () => {
     // Read a dynamic URL params
     const {resid} = useParams(); //same as const {id} = params; also called as destructuring on the fly
 
-    const [restaurant, setRestaurant] = useState(null); 
-    console.log(useState());
-    useEffect(() => {
-        getRestaurantInfo();
-    },[]);
-    
-    async function getRestaurantInfo()
-    {
-        const data = await fetch("https://www.swiggy.com/dapi/menu/v4/full?lat=19.943778545073037&lng=73.79395517606287&menuId=" + resid);
-        const json = await data.json();
-        // console.log(json);
-        setRestaurant(json.data);
-    }
+   //const [restaurant, setRestaurant] = useState(null); 
+
+    const restaurant = useRestaurant(resid);
     
     return (!restaurant)? <Shimmer/> : (
         <div className="Menu">
